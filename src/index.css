@@ -7,3 +7,12 @@
   font-family: "Lato";
   src: url(../public/fonts/lato-regular.woff) format("truetype");
 }
+
+@font-face {
+  font-family: "DINCond-Bold";
+  src: url(../public/fonts/DINCond-Bold\ Regular.otf) format("truetype");
+}
+
+body {
+  margin: 0;
+}

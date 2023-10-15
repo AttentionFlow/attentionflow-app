@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AppLogo from "@public/logo.svg";
+import TitleImg from "@public/title.svg";
 
 const HeaderContainer = styled.div`
   height: 70px;
@@ -16,11 +16,11 @@ const HeaderTitle = styled.div`
   width: 140px;
   font-size: 20px;
   font-family: Lato;
-  line-height: 24px;
+  line-height: 80px;
 
   .img {
-    width: 24px;
-    height: 24px;
+    width: 180px;
+    height: 80px;
     margin: 0 8px 0 0;
   }
 `;
@@ -28,6 +28,7 @@ const HeaderTitle = styled.div`
 const MonetizeBtn = styled.div`
   font-size: 20px;
   font-family: Poppins;
+  line-height: 80px;
   color: #007aff;
   cursor: pointer;
 `;
@@ -36,8 +37,8 @@ export default function Header() {
   return (
     <HeaderContainer>
       <HeaderTitle>
-        <img className="img" src=" /logo.svg" alt="logo" />
-        <div>AttentionFlow</div>
+        <img className="img" src={TitleImg} alt="logo" />
+        {/* <div>AttentionFlow</div> */}
       </HeaderTitle>
       <MonetizeBtn>Monetize your space</MonetizeBtn>
     </HeaderContainer>

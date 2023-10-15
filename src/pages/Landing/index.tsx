@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import AppLogo from "@public/logo.svg";
+import AppLogo from "@public/title.svg";
 import BgColorful from "@public/bg-colorful.svg";
 import { useNavigate } from "react-router-dom";
 
 declare global {
   interface Window {
-    attentionflow: any;
+    attentionflow: {
+      getAttentionRecord: () => Promise<any>;
+    };
   }
 }
 
@@ -30,26 +32,25 @@ const TitleText = styled.h1`
 `;
 
 const Logo = styled.img`
-  width: 51px;
-  height: 51px;
+  width: 450px;
+  height: 150px;
 `;
 
 const Container = styled.div`
   display: flex;
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 150px;
 `;
 
 const SubTitleText = styled.h2`
   color: #232325;
-  font-family: Poppins;
-  font-size: 40px;
+  font-family: DINCond-Bold;
+  font-size: 96px;
   font-style: normal;
   font-weight: 400;
-  line-height: 131.023%; /* 52.409px */
   position: absolute;
-  top: 400px;
+  top: 240px;
   left: 150px;
 `;
 
@@ -69,7 +70,7 @@ const Btn = styled.button`
   background: #fff;
   box-shadow: 2px 3px 0px 0px rgba(0, 0, 0, 0.25);
   position: absolute;
-  bottom: 200px;
+  bottom: 120px;
   left: 150px;
   font-family: Poppins;
   font-size: 20px;
@@ -90,12 +91,12 @@ export default function Landing() {
       <BgColorfulImg src={BgColorful} />
       <Container>
         <Logo src={AppLogo} />
-        <TitleText>AttentionFlow</TitleText>
+        {/* <TitleText>AttentionFlow</TitleText> */}
       </Container>
       <SubTitleText>
-        Unleash the Power of Your <br />
-        Attention, Monetize Your Digital
-        <br /> Journey.
+        UNLEASH
+        <br /> THE VALUE OF <br />
+        YOUR ATTENTION.
       </SubTitleText>
       {isExtensionInstalled() ? (
         <Btn

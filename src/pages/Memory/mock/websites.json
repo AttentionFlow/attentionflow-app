@@ -1,0 +1,84 @@
+{
+  "AttentionRecord": {
+    "History": [
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 1,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 2,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 3,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 23876,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 23877,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 23878,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 23879,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      },
+      {
+        "url": "http://www.baidu.com",
+        "visitCount": 2,
+        "visitDuration": 23880,
+        "lastVisit": 1490176000000,
+        "category": "Social"
+      }
+    ],
+    "Bookmarks": [
+      {
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "title": "百度一下，你就知道",
+        "addedAt": 1490176000000
+      },
+      {
+        "url": "http://www.baidu.com",
+        "title": "百度一下，你就知道",
+        "addedAt": 1490176000000
+      },
+      {
+        "url": "http://www.baidu.com",
+        "title": "百度一下，你就知道",
+        "addedAt": 1490176000000
+      },
+      {
+        "url": "http://www.baidu.com",
+        "title": "百度一下，你就知道",
+        "addedAt": 1490176000000
+      }
+    ]
+  }
+}
