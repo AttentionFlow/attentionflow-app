@@ -1,11 +1,9 @@
-import {
-  Navigate,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Landing from "./pages/Landing";
 import Memory from "./pages/Memory";
+import { DataverseConnector } from "@dataverse/dataverse-connector";
+import React from "react";
 
 const BodyWrapper = styled.div`
   display: flex;

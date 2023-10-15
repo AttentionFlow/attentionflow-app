@@ -6,6 +6,7 @@ const WebsiteListContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  font-family: Poppins;
 `;
 
 interface WebsiteListProps {

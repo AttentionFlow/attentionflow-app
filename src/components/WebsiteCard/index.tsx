@@ -6,7 +6,7 @@ import { LinkPreview } from "@dhaiwat10/react-link-preview";
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  width: 300px;
   border-radius: 14px 14px 14px 14px;
   background: transparent;
   backdrop-filter: blur(2px);

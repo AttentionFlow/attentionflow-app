@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import AppLogo from "@public/title.svg";
 import BgColorful from "@public/bg-colorful.svg";
 import { useNavigate } from "react-router-dom";
+import { DataverseConnector } from "@dataverse/dataverse-connector";
 
 declare global {
   interface Window {
@@ -20,15 +21,6 @@ const LandingContainer = styled.div`
   align-items: center;
   z-index: 1;
   background-color: #eeeae2;
-`;
-
-const TitleText = styled.h1`
-  font-size: 36px;
-  line-height: 51px;
-  font-weight: 400;
-  font-family: Lato;
-  text-align: center;
-  margin: 0 0 24px 12px;
 `;
 
 const Logo = styled.img`
@@ -79,12 +71,18 @@ const Btn = styled.button`
   }
 `;
 
+const dataverseConnector = new DataverseConnector();
+
 export default function Landing() {
   const isExtensionInstalled = (): boolean => {
     return window.attentionflow !== undefined;
   };
-
   const navigate = useNavigate();
+
+  const handleSignIn = async () => {
+
+    navigate("/app");
+  };
 
   return (
     <LandingContainer>
@@ -101,7 +99,7 @@ export default function Landing() {
       {isExtensionInstalled() ? (
         <Btn
           onClick={() => {
-            navigate("/app");
+            handleSignIn();
           }}
         >
           Enter App

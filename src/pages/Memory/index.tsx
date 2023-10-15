@@ -7,10 +7,10 @@ import WebsiteList from "../../components/WebsiteList";
 import attentionRecord from "./mock/websites.json";
 import { PieChart } from "@mui/x-charts/PieChart";
 import Pie from "@public/pie.svg";
-import { extractDomain } from "../../utils";
+import { convertTimestampToDate, extractDomain } from "../../utils";
 
 const MemoryContainer = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -24,11 +24,19 @@ const MemoryContainer = styled.div`
     width: 100%;
     height: 40px;
     justify-content: space-between;
+    margin-top: 45px;
+    margin-bottom: 26px;
   }
 
   .stats-container {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 26px;
+  }
+
+  .img {
     width: 100%;
   }
 `;
@@ -97,7 +105,7 @@ const CardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 15px;
-  margin-bottom: 45px;
+  row-gap: 15px;
 `;
 
 export default function Memory() {
@@ -148,8 +156,8 @@ export default function Memory() {
             <div className="text">Websites</div>
           </BigStats>
           <BigStats>
-            <div className="number">{_sum()}</div>
-            <div className="text">Minutes</div>
+            <div className="number">{convertTimestampToDate(_sum())}</div>
+            <div className="text">Usage time</div>
           </BigStats>
           {/* <PieChart
             series={[
@@ -174,7 +182,7 @@ export default function Memory() {
             ]}
           /> */}
         </div>
-        <img src={Pie} />
+        <img className="img" src={Pie} />
         <div className="date-bar">
           <Subtitle>
             New favorites ({attentionRecord.AttentionRecord.Bookmarks.length})

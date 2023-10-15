@@ -4,7 +4,7 @@ import TitleImg from "@public/title.svg";
 
 const HeaderContainer = styled.div`
   height: 70px;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
