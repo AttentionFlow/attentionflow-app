@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../public/fonts/Poppins-Regular.woff) format("truetype");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(../public/fonts/lato-regular.woff) format("truetype");
+}
