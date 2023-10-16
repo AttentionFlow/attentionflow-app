@@ -6,7 +6,8 @@ export default function Divider() {
       style={{
         width: "100%",
         height: "1px",
-        backgroundColor: "#EAEAEA",
+        backgroundColor: "#666",
+        margin: "4px 0",
       }}
     />
   );

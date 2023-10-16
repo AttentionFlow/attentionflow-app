@@ -7,9 +7,9 @@ import "./index.css";
 const Router = BrowserRouter;
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Router>
+    <App />
+  </Router>
+  // </React.StrictMode>
 );

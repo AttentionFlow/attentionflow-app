@@ -23,6 +23,6 @@ export const convertTimestampToDate = (timestamp: number): string => {
   const formattedTime =
     hours + "h" + minutes.substr(-2) + "min";
 
-  console.log({ formattedTime });
+  // console.log({ formattedTime });
   return formattedTime;
 };

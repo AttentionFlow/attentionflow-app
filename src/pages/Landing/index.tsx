@@ -3,7 +3,9 @@ import styled from "styled-components";
 import AppLogo from "@public/title.svg";
 import BgColorful from "@public/bg-colorful.svg";
 import { useNavigate } from "react-router-dom";
-import { DataverseConnector } from "@dataverse/dataverse-connector";
+import { DataverseContext } from "../../App";
+import { WalletProvider } from "@dataverse/wallet-provider";
+import { WALLET } from "@dataverse/dataverse-connector";
 
 declare global {
   interface Window {
@@ -71,17 +73,31 @@ const Btn = styled.button`
   }
 `;
 
-const dataverseConnector = new DataverseConnector();
-
 export default function Landing() {
+  const [wallet, setWallet] = React.useState<WALLET>(WALLET.PARTICLE);
   const isExtensionInstalled = (): boolean => {
     return window.attentionflow !== undefined;
   };
   const navigate = useNavigate();
+  const dataverseConnector = useContext(DataverseContext);
+
+  const signInWithTwitter = async (_wallet = wallet) => {
+    const provider = new WalletProvider();
+    const res = await dataverseConnector.connectWallet({
+      ...(_wallet !== WALLET.EXTERNAL_WALLET && {
+        wallet: _wallet,
+        preferredAuthType: "twitter",
+      }),
+      provider,
+    });
+    console.log({ res });
+    return res.address;
+  };
 
   const handleSignIn = async () => {
-
-    navigate("/app");
+    dataverseConnector.connectWallet;
+    const wallet = await signInWithTwitter();
+    navigate("/app/" + wallet);
   };
 
   return (

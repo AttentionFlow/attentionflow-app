@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Placeholder from "@public/placeholder.png";
-import { LinkPreview } from "@dhaiwat10/react-link-preview";
+import axios from "axios";
 
 const CardContainer = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const CardContainer = styled.div`
 
   .img {
     width: 100%;
-    height: 148px;
+    height: 160px;
     border-radius: 14px 14px 0px 0px;
   }
 
@@ -33,7 +33,11 @@ const CardContainer = styled.div`
       font-family: Poppins;
       font-size: 16px;
       word-wrap: break-word;
-      margin-bottom: 12px;
+      margin-bottom: 28px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
     }
 
     .botton-bar {
@@ -47,6 +51,11 @@ const CardContainer = styled.div`
       .subTitle {
         font-size: 12px;
         font-family: Poppins;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
       }
 
       .btn {
@@ -64,10 +73,35 @@ interface WebsiteCardProps {
   title: string;
 }
 
+const getWebsiteSnapshot = async (url: string) => {
+  const imageUrl = await axios
+    .post("https://gateway.dataverse.art/v1/assets", {
+      content_url: "",
+      content_id: url,
+      content_type: 1,
+    })
+    .then((res) => {
+      console.log("response: ", res);
+      return res.data.data.image;
+    });
+  console.log("imageUrl: ", imageUrl);
+  return imageUrl;
+};
+
 export default function WebsiteCard({ url, favicon, title }: WebsiteCardProps) {
+  const [image, setImage] = React.useState<string>();
+
+  React.useEffect(() => {
+    const fetchImage = async () => {
+      const imageUrl = await getWebsiteSnapshot(url);
+      setImage(imageUrl);
+    };
+    fetchImage();
+  }, []);
+
   return (
     <CardContainer>
-      <img className="img" src={Placeholder} alt="favicon" />
+      <img className="img" src={image} alt="favicon" />
       <div className="container">
         <div className="title">{url}</div>
         <div className="botton-bar">
