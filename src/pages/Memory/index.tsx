@@ -279,7 +279,7 @@ export default function Memory() {
       }
       const profileId = await getProfileId({
         pkh,
-        lensNickName: "xiangyu123",
+        lensNickName: "a" + window.Date.now(),
       });
 
       const res = await dataverseConnector.runOS({
