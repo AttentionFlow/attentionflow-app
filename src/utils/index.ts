@@ -20,9 +20,19 @@ export const convertTimestampToDate = (timestamp: number): string => {
   // const seconds = "0" + date.getSeconds();
 
   // Will display time in 10:30:23 format
-  const formattedTime =
-    hours + "h" + minutes.substr(-2) + "min";
+  const formattedTime = hours + "h" + minutes.substr(-2) + "min";
 
   // console.log({ formattedTime });
   return formattedTime;
+};
+
+export const formatDuration = (duration: number) => {
+  const hours = Math.floor(
+    (duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+  return `${hours ? hours + "h" : ""}${minutes ? minutes + "min" : ""}${
+    seconds + "s"
+  }`;
 };
