@@ -6,7 +6,7 @@ import WebsiteCard from "../../components/WebsiteCard";
 import WebsiteList from "../../components/WebsiteList";
 import { PieChart } from "@mui/x-charts/PieChart";
 import Pie from "@public/pie.svg";
-import { convertTimestampToDate, extractDomain } from "../../utils";
+import { extractDomain, formatDuration } from "../../utils";
 import { DataverseContext } from "../../App";
 import { WalletProvider } from "@dataverse/wallet-provider";
 import {
@@ -382,7 +382,7 @@ export default function Memory() {
             <div className="text">Websites</div>
           </BigStats>
           <BigStats>
-            <div className="number">{convertTimestampToDate(_sum())}</div>
+            <div className="number">{formatDuration(_sum())}</div>
             <div className="text">Usage time</div>
           </BigStats>
           {/* <PieChart
@@ -436,18 +436,20 @@ export default function Memory() {
           <Subtitle>History ( {attentionRecord.history.length} )</Subtitle>
           <ShowMoreBtn>Show More</ShowMoreBtn>
         </div>
-        {attentionRecord.history.map((record) => {
-          return (
-            <>
-              <WebsiteList
-                url={record.url}
-                title={extractDomain(record.url)}
-                usageTime={record.lastVisit}
-              />
-              <Divider />
-            </>
-          );
-        })}
+        {attentionRecord.history
+          .sort((a, b) => b.lastVisit - a.lastVisit)
+          .map((record) => {
+            return (
+              <>
+                <WebsiteList
+                  url={record.url}
+                  title={extractDomain(record.url)}
+                  usageTime={record.visitDuration}
+                />
+                <Divider />
+              </>
+            );
+          })}
       </MemoryContainer>
     </MemoryContainer>
   );

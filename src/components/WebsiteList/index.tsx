@@ -1,7 +1,5 @@
-import { convertTimestampToDate } from "../../utils";
-import React from "react";
+import { formatDuration } from "../../utils";
 import styled from "styled-components";
-import Divider from "../Divider";
 
 const WebsiteListContainer = styled.div`
   display: flex;
@@ -50,7 +48,7 @@ export default function WebsiteList({
     <WebsiteListContainer>
       <div className="title">{title}</div>
       <div className="subText">{url}</div>
-      <div className="time">{convertTimestampToDate(usageTime)}</div>
+      <div className="time">{formatDuration(usageTime)}</div>
     </WebsiteListContainer>
   );
 }

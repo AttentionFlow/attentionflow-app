@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dataverse/dataverse-connector": "^1.0.29",
     "@dataverse/wallet-provider": "^1.0.13",
     "@dhaiwat10/react-link-preview": "^1.15.0",
     "@emotion/react": "^11.11.1",
