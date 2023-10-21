@@ -164,13 +164,13 @@ export default function Memory() {
   const [provider, setProvider] = useState<WalletProvider>();
   const [wallet, setWallet] = useState<WALLET>(WALLET.PARTICLE);
   const [appId, setAppId] = useState<string>(
-    "8760167a-0514-4974-9dee-e7383c16dc1a"
+    "38ecb66e-5313-4020-a079-4b24bf3df196"
   );
   const [pkh, setPkh] = useState<string>();
   const [streamId, setStreamId] = useState<string>();
   const [indexFileId, setIndexFileId] = useState<string>();
   const modelId =
-    "kjzl6hvfrbw6c55avcny9cx0jogqv2hfif5h8taww9hpbno2hezm5tluizoohwg";
+    "kjzl6hvfrbw6cagngafmidvlvtlkcub1cy59c79d71q5rmg9xhaqlzs64sbq6dm";
 
   const switchNetwork = async () => {
     if (!dataverseConnector?.isConnected) {
@@ -212,7 +212,7 @@ export default function Memory() {
   const createStream = async () => {
     const date = new window.Date().toISOString();
     const encrypted = JSON.stringify({
-      content: false,
+      content: true,
     });
 
     // console.log(JSON.stringify(attentionRecord));
